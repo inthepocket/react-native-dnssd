@@ -66,6 +66,13 @@ public class RNDNSSDModule extends ReactContextBaseJavaModule {
     Disposable search = dnssd.newDiscovery(serviceType)
       .subscribeOn(Schedulers.io())
       .observeOn(AndroidSchedulers.mainThread())
+      .distinct(new Function<BonjourEvent, String>() {
+
+        @Override
+        public String apply(BonjourEvent bonjourEvent) throws Exception {
+          return bonjourEvent.getService().getHost().getHostAddress();
+        }
+      })
       .subscribe(
         new Consumer<BonjourEvent>() {
           @Override
