@@ -22,6 +22,7 @@ import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.Disposable;
 import io.reactivex.disposables.Disposables;
 import io.reactivex.functions.Consumer;
+import io.reactivex.functions.Function;
 import io.reactivex.schedulers.Schedulers;
 
 import de.mannodermaus.rxbonjour.BonjourEvent;
@@ -70,7 +71,7 @@ public class RNDNSSDModule extends ReactContextBaseJavaModule {
 
         @Override
         public String apply(BonjourEvent bonjourEvent) throws Exception {
-          return bonjourEvent.getService().getHost().getHostAddress();
+          return bonjourEvent.toString();
         }
       })
       .subscribe(
