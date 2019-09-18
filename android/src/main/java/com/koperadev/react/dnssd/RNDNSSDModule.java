@@ -2,16 +2,14 @@
 package com.koperadev.react.dnssd;
 
 import java.net.InetAddress;
+
 import java.util.ArrayList;
-import java.util.concurrent.TimeUnit;
 import java.util.Map;
 import javax.annotation.Nullable;
 
-import android.os.Build;
 import android.util.Log;
 
 import com.facebook.react.bridge.ReactApplicationContext;
-import com.facebook.react.bridge.ReactContext;
 import com.facebook.react.bridge.ReactContextBaseJavaModule;
 import com.facebook.react.bridge.ReactMethod;
 import com.facebook.react.bridge.WritableMap;
@@ -20,7 +18,6 @@ import com.facebook.react.modules.core.DeviceEventManagerModule;
 
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.Disposable;
-import io.reactivex.disposables.Disposables;
 import io.reactivex.functions.Consumer;
 import io.reactivex.functions.Function;
 import io.reactivex.schedulers.Schedulers;
@@ -77,7 +74,7 @@ public class RNDNSSDModule extends ReactContextBaseJavaModule {
       .subscribe(
         new Consumer<BonjourEvent>() {
           @Override
-          public void accept(BonjourEvent event) throws Exception {
+          public void accept(final BonjourEvent event) throws Exception {
             BonjourService bonjourService = event.getService();
             InetAddress host = bonjourService.getHost();
 
