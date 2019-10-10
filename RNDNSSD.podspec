@@ -5,11 +5,11 @@ Pod::Spec.new do |s|
   s.description  = <<-DESC
     React Native DNS SD
   DESC
-  s.homepage     = "https://github.com/koperadev/react-native-dnssd"
+  s.homepage     = "https://github.com/inthepocket/react-native-dnssd"
   s.license      = "MIT"
   s.author       = { "Ali Sabil" => "ali.sabil@gmail.com" }
   s.platform     = :ios, "7.0"
-  s.source       = { :git => "https://github.com/koperadev/react-native-dnssd.git", :tag => "master" }
+  s.source       = { :git => "https://github.com/inthepocket/react-native-dnssd.git", :tag => "master" }
   s.source_files  = "ios/**/*.{h,m}"
   s.requires_arc = true
 
