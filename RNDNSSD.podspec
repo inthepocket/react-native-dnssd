@@ -1,5 +1,5 @@
 Pod::Spec.new do |s|
-  s.name         = "RNDnssd"
+  s.name         = "RNDNSSD"
   s.version      = "1.0.0"
   s.summary      = "React Native DNS SD"
   s.description  = <<-DESC
